@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 
 @Data //this contains getters and setters + toString + equals and hashcode comparison it's ALL IN ONE
 @NoArgsConstructor
@@ -24,4 +26,7 @@ public class Author {
     private String email;
 
     private int age; // as age is important age = 0 can be detected but null throws error
+
+    @ManyToMany(mappedBy = "authors")
+    private List <Course> courses;
 }
