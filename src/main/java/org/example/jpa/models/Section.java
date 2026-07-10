@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -22,6 +23,9 @@ public class Section {
     private int sectionOrder;
 
     @ManyToOne
-    @JoinColumn(name="course_id")
-    private Course course;
+    @JoinColumn(name="course_id ")
+    private Course courses;
+
+    @OneToMany(mappedBy = "section")
+    private List<Lecture> lectures;
 }

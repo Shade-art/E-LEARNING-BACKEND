@@ -24,7 +24,7 @@ public class Course {
 
     //making Courses the owner of our join table and is responsible for maintaining foreign key values in joint table
     @ManyToMany
-    @JoinTable(
+    @JoinTable( //making a separate table joining many to many relation
             name="authors_courses", //name of joint table
             joinColumns = { //first column of this new table should be of owner
                     @JoinColumn(name="courses_id")
@@ -35,6 +35,6 @@ public class Course {
     )
     private List<Author> authors;
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "courses")
     private List<Section> sections;
 }
