@@ -1,5 +1,6 @@
 package org.example.jpa.models;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@DiscriminatorValue("FILE")
 public class File extends Resource {
 
     private String type;
