@@ -6,11 +6,13 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+
 @EqualsAndHashCode(callSuper = true)
 @Data
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Resource extends BaseEntity {
 
 
