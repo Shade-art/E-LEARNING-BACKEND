@@ -3,17 +3,16 @@ package org.example.jpa.models;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Resource {
+public class Resource extends BaseEntity {
 
-    @Id
-    @GeneratedValue
-    private Integer id;
 
     private String name;
 
@@ -21,6 +20,7 @@ public class Resource {
 
     private String url;
 
-    @OneToOne(mappedBy = "resources")
+    @OneToOne
+    @JoinColumn(name="lecture_id")
     private Lecture lectures;
 }
